@@ -1,0 +1,36 @@
+.container {
+    margin: 0;
+    width: 100%;
+}
+
+.container .table {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container .table #row1 {
+    width: 5%;
+}
+
+.container .table #row2 {
+    text-align: center;
+    width: 65%;
+}
+
+.container .table #row3 {
+    width: 20%;
+}
+
+.container .table #row4 {
+    text-align: center;
+    width: 10%;
+}
+
+#row2-text {
+    text-align: left;
+}
+
+#row4-option {
+    text-align: center;
+}
