@@ -1,5 +1,4 @@
 <div class="container">
-
     <a class="btn btn-primary btn-lg" href="#popup1" role="button" *ngIf="visiable" (click)="clickbutton()">create</a>
 </div>
 
@@ -7,7 +6,7 @@
     <a href="#" (click)="clickbutton($event)" id="cancel">&times;</a>
     <form action="" method="post" id="form">
         <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+            <label for="staticEmail" class="col-sm-2 col-form-label">Job</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="staticEmail" placeholder="Job..." autofocus>
             </div>
@@ -17,6 +16,20 @@
             <div class="col-sm-10">
                 <input type="" class="form-control" id="inputPassword" placeholder="Password">
             </div>
+        </div>
+        <div id="check-box" style="display: inline">
+            <label class="container-button">One
+                        <input type="radio" checked="checked" name="radio">
+                        <span class="checkmark"></span>
+                      </label>
+            <label class="container-button">Two
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                      </label>
+            <label class="container-button">Three
+                        <input type="radio" name="radio">
+                        <span class="checkmark"></span>
+                      </label>
         </div>
     </form>
 </div>
