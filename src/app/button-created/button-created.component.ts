@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button-created.component.css']
 })
 export class ButtonCreatedComponent implements OnInit {
-    public visiable : boolean = false;
+    public visiable : boolean = true;
   constructor() { }
 
   ngOnInit() {
     }
-    clickbutton(){
+    clickbutton(event){
         this.visiable = !this.visiable;
     }
 }
