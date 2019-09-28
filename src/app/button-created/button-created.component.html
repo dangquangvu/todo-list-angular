@@ -4,17 +4,17 @@
 
 <div class="popup" id="popup1" *ngIf="!visiable" style="transition: 2s all">
     <a href="#" (click)="clickbutton($event)" style="text-decoration: none" id="cancel">&times;</a>
-    <form action="" method="post" id="form">
+    <form action="" method="post" id="form" #formJob="ngForm">
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Job</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="staticEmail" placeholder="Job..." autofocus>
+                <input type="text" [(ngModel)]="name" class="form-control" id="staticEmail" placeholder="Job..." autofocus name="name">
             </div>
         </div>
         <div class="form-group row">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Description</label>
+            <label for="description" class="col-sm-2 col-form-label">Description</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputPassword" placeholder="Description...">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Description..." [(ngModel)]="description">
             </div>
         </div>
         <div id="check-box" style="display: inline">
@@ -22,7 +22,7 @@
                         <input type="radio" checked="checked" name="radio">
                         <span class="checkmark" ></span>
                       </label>
-            <label class="container-button" style="margin: 10px;color: orange">Not Hurry
+            <label class="container-button" style="margin: 10px;color: orange">Not Hungry
                         <input type="radio" name="radio">
                         <span class="checkmark" ></span>
                       </label>
@@ -32,17 +32,19 @@
                       </label>
         </div>
         <div class="form-group row" style='top: 10%'>
-            <label for="inputPassword" class="col-sm-2 col-form-label">Date</label>
+            <label for="Date" class="col-sm-2 col-form-label">Date</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="inputPassword" placeholder="Date..." style="width: 60%;" [value]="date">
+                <input type="date" name="date" class="form-control" id="Date" placeholder="Date..." style="width: 60%;" [(ngModel)]="date" [value]="date">
             </div>
         </div>
-        <div class="box">
-            <select>
-              <option value="am">AM</option>
-              <option value="pm">PM</option>
-            </select>
-        </div>
+        <!-- <div class="box">
+            <select [(ngModel)]="selectedValue" required>
+                <option *ngFor="let city of options" [ngValue]="city.value" [(ngModel)]="city.value" >{{city.value}}</option>
+             </select>
+        </div> -->
+        <button type="submit" class="btn btn-primary" id='button-summit' value="submit" (click)="onClickSubmit(formJob.value)" (click)="clickbutton()" (click)="showdata()">Submit</button>
     </form>
-    <button type="submit" class="btn btn-primary" id='button-summit' (click)="dateTime()">Submit</button>
+
+</div>
+<div>
 </div>

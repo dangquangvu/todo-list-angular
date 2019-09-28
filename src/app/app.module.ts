@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { ButtonCreatedComponent } from './button-created/button-created.component';
 import { HeaderComponent } from './header/header.component';
 import { TableComponent } from './table/table.component';
-
+import {FormsModule} from '@angular/forms';
+import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { TableComponent } from './table/table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
