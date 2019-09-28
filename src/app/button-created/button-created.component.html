@@ -42,7 +42,7 @@
                 <option *ngFor="let city of options" [ngValue]="city.value" [(ngModel)]="city.value" >{{city.value}}</option>
              </select>
         </div> -->
-        <button type="submit" class="btn btn-primary" id='button-summit' value="submit" (click)="onClickSubmit(formJob.value)" (click)="clickbutton()" (click)="showdata()">Submit</button>
+        <button type="button" class="btn btn-primary" id='button-summit' value="submit" (click)="onClickSubmit(formJob.value)" (click)="clickbutton()" (click)="sentValueButtoncpn(objectData)">Submit</button>
     </form>
 
 </div>
