@@ -15,27 +15,40 @@ export class ButtonCreatedComponent implements OnInit {
   objectData: any = {};
   arrData: any = [];
   options: any = [{ value: "AM" }, { value: "PM" }];
-  @Output() newValue = new EventEmitter<object>();
+  @Output()
+  newValue = new EventEmitter<object>();
+
   public visiable: boolean = true;
+
   public date: string = moment().format("YYYY-MM-DD");
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+      this.name = 'vũ đẹp trai'
+  }
 
-  clickbutton(event) {
+  clickSubmit() {
+    this.name = '';
+    this.description = '';
     this.visiable = !this.visiable;
   }
-  onClickSubmit(data ) {
+
+  clickbutton() {
+    this.visiable = !this.visiable;
+  }
+  onClickSubmit(data) {
     this.selected = this.selectedValue;
     this.objectData = {
       name: data.name,
       des: data.description,
       date: data.date
     };
-    console.log(this.objectData)
     this.sentValueButtoncpn(this.objectData);
+    this.clickSubmit();
   }
   sentValueButtoncpn(value: object) {
     this.newValue.emit(value);
+    console.log(value, 2222222);
   }
 }

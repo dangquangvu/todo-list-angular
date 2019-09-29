@@ -6,13 +6,14 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./table.component.css"]
 })
 export class TableComponent implements OnInit {
-  arrData: any[];
-
-  addItem(value: object) {
-    this.arrData.push(value);
-  }
-
+  arrData: Array<object>;
+  @Input() objectData: any;
   constructor() {}
 
   ngOnInit() {}
+
+  updateArrObject(objectData){
+      this.arrData.push(objectData)
+  }
+
 }

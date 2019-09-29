@@ -5,11 +5,11 @@
         </div>
         <div class="menu-bar">
             <div class="created-button">
-                <app-button-created></app-button-created>
+                <app-button-created (newValue)="addItem($event)"></app-button-created>
             </div>
         </div>
         <div class="table">
-            <app-table (sentValueButtoncpn)="addItem($event)"></app-table>
+            <app-table [objectData]="dataFormInputReceive" (change)="updateArrObject(objectData)"></app-table>
         </div>
     </div>
 </div>

@@ -8,12 +8,11 @@
                 <th scope="col" id="row4">Options</th>
             </tr>
         </thead>
-        <tbody>
-
+        <tbody *ngIf="objectData">
             <tr>
                 <th scope="row" id="row1">1</th>
-                <td id="row2-text">Mark</td>
-                <td id="row3">Otto</td>
+                <td id="row2-text">{{objectData.name}}</td>
+                <td id="row3">{{objectData.des}}</td>
                 <td id="row4-option">@mdo</td>
             </tr>
         </tbody>

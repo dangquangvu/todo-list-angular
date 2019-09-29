@@ -7,4 +7,9 @@ import { Component, Input } from "@angular/core";
 })
 export class AppComponent {
   title = "todolist-angular";
+    dataFormInputReceive : object;
+  addItem(value) {
+    this.dataFormInputReceive = value;
+    console.log('ok');
+  }
 }

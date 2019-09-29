@@ -8,7 +8,7 @@
         <div class="form-group row">
             <label for="staticEmail" class="col-sm-2 col-form-label">Job</label>
             <div class="col-sm-10">
-                <input type="text" [(ngModel)]="name" class="form-control" id="staticEmail" placeholder="Job..." autofocus name="name">
+                <input type="text" [(ngModel)]="name" class="form-control" id="staticEmail" placeholder="Job..." autofocus name="name" required>
             </div>
         </div>
         <div class="form-group row">
@@ -42,7 +42,7 @@
                 <option *ngFor="let city of options" [ngValue]="city.value" [(ngModel)]="city.value" >{{city.value}}</option>
              </select>
         </div> -->
-        <button type="button" class="btn btn-primary" id='button-summit' value="submit" (click)="onClickSubmit(formJob.value)" (click)="clickbutton()" (click)="sentValueButtoncpn(objectData)">Submit</button>
+        <button type="button" class="btn btn-primary" id='button-summit' value="submit" (click)="onClickSubmit(formJob.value)">Submit</button>
     </form>
 
 </div>
