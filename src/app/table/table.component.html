@@ -5,15 +5,31 @@
                 <th scope="col" id="row1">#</th>
                 <th scope="col" id="row2">Job</th>
                 <th scope="col" id="row3">Date</th>
+                <th scope="col" id="row4">Done</th>
                 <th scope="col" id="row4">Options</th>
             </tr>
         </thead>
-        <tbody *ngIf="objectData">
-            <tr>
-                <th scope="row" id="row1">1</th>
-                <td id="row2-text">{{objectData.name}}</td>
-                <td id="row3">{{objectData.des}}</td>
-                <td id="row4-option">@mdo</td>
+        <tbody *ngIf="arrData.length >0">
+            <tr *ngFor="let item of arrData.slice(1);let i = index">
+                <ng-container *ngIf="item.hurry== 'hurry'">
+                </ng-container>
+                <th scope="row " id="row1 ">{{i+1}}</th>
+                <td id="row2-text ">{{item.name}}</td>
+                <td id="row3 ">{{item.date}}
+                    <ng-container *ngIf="item.pmAm ==undefined">
+                        (<a href="">AM</a>)
+                    </ng-container>
+                    <ng-container *ngIf="item.pmAm">
+                        (<a href="">{{item.pmAm.value}}</a>)
+                    </ng-container>
+                </td>
+                <td id="row5" style="text-align: center">
+                    <div class="checkbox">
+                        <label><input type="checkbox" value=""></label>
+                    </div>
+                </td>
+                <td id="row4 " style="text-align: center"><a href="#" style="text-decoration: none"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+
             </tr>
         </tbody>
     </table>

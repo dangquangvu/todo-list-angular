@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, SimpleChanges, ElementRef } from "@angular/core";
 
 @Component({
   selector: "app-table",
@@ -6,14 +6,24 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./table.component.css"]
 })
 export class TableComponent implements OnInit {
-  arrData: Array<object>;
+  arrData=[];
   @Input() objectData: any;
-  constructor() {}
+  dataBind: any;
+  public elRef: ElementRef;
+  constructor(){}
+  index : number = 1;
+  ngOnInit() {
 
-  ngOnInit() {}
-
-  updateArrObject(objectData){
-      this.arrData.push(objectData)
   }
-
+  ngOnChanges(changes: SimpleChanges): void {
+      if(changes){
+          this.updateArrObject(this.objectData);
+          console.log(this.elRef.nativeElement.parentElement,2222222222222222);
+        }
+        console.log(changes['objectData'].currentValue)
+    }
+  updateArrObject(objectData: any) {
+    this.arrData.push(objectData);
+    console.log(this.arrData)
+  }
 }

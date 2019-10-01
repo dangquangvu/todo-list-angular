@@ -14,10 +14,20 @@ export class ButtonCreatedComponent implements OnInit {
   cityName: string;
   objectData: any = {};
   arrData: any = [];
-  options: any = [{ value: "AM" }, { value: "PM" }];
+  radioSelected: string;
+  radioSelectedString: string;
+  selectBox : string;
+  selectedLevel : string;
+
+  options: any = [{ name : 1, value: "AM" }, {name : 2, value: "PM" }];
   @Output()
   newValue = new EventEmitter<object>();
 
+  public checkboxRole = [
+    { name: 1, value: "Normal" },
+    { name: 2, value: "Not hurry" },
+    { name: 3, value: "hurry" }
+  ];
   public visiable: boolean = true;
 
   public date: string = moment().format("YYYY-MM-DD");
@@ -25,12 +35,16 @@ export class ButtonCreatedComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-      this.name = 'vũ đẹp trai'
+    this.name = "vũ đẹp trai";
+    this.description = "";
+    this.date = this.date;
+    this.objectData = {};
+    this.selectedValue = this.options[0].value;
   }
 
   clickSubmit() {
-    this.name = '';
-    this.description = '';
+    this.name = "";
+    this.description = "";
     this.visiable = !this.visiable;
   }
 
@@ -42,7 +56,9 @@ export class ButtonCreatedComponent implements OnInit {
     this.objectData = {
       name: data.name,
       des: data.description,
-      date: data.date
+      date: data.date,
+      hurry: this.radioSelected,
+      pmAm : this.selectedLevel
     };
     this.sentValueButtoncpn(this.objectData);
     this.clickSubmit();
@@ -50,5 +66,8 @@ export class ButtonCreatedComponent implements OnInit {
   sentValueButtoncpn(value: object) {
     this.newValue.emit(value);
     console.log(value, 2222222);
+  }
+  selectedshowval(){
+      console.log(this.selectedLevel)
   }
 }
