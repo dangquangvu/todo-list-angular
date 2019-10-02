@@ -65,7 +65,6 @@ export class ButtonCreatedComponent implements OnInit {
   }
   sentValueButtoncpn(value: object) {
     this.newValue.emit(value);
-    console.log(value, 2222222);
   }
   selectedshowval(){
       console.log(this.selectedLevel)

@@ -14,6 +14,7 @@ export class AppComponent {
   addItem(value : object) {
     this.dataFormInputReceive = value;
   }
+  
   sentData(){
     this.sentDataTable.emit(this.dataFormInputReceive)
   }

@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div id="check-box" style="display: inline" *ngFor="let item of checkboxRole">
+        <div id="check-box" style="display: inline" *ngFor="let item of checkboxRole" required>
             <ng-container *ngIf="item.value == 'Normal'">
                 <label class="container-button" style="margin: 10px;color: greenyellow">{{item.value}}
                             <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{item.value}}" checked="checked" >
@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="box">
-            <select (change)="selectedshowval()" [(ngModel)]="selectedLevel" name="selectedLevel">
+            <select (change)="selectedshowval()" [(ngModel)]="selectedLevel" name="selectedLevel" required>
                         <option *ngFor="let item of options"  [ngValue]="item">{{item.value}}</option>
                     </select>
         </div>

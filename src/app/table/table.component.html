@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody *ngIf="arrData.length >0">
-            <tr *ngFor="let item of arrData.slice(1);let i = index">
+            <tr *ngFor="let item of arrData.slice(1);let i = index" #tref>
                 <ng-container *ngIf="item.hurry== 'hurry'">
                 </ng-container>
                 <th scope="row " id="row1 ">{{i+1}}</th>
